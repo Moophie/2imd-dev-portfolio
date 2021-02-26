@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.15em;
+}
+
+h1, h2, h3 {
+  padding: 0px;
+  margin: 0px;
+}
+
+p {
+  font-weight: bold;
+}
+
+div div {
+  border: solid 2px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ticket-container {
+  display: grid;
+  grid-template: 8fr 3fr 2fr / 2fr 2fr 2fr 3fr;
+  background-image: url("../images/festival_image.jpg");
+  background-size: 1200px;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 1200px;
+  height: 350px;
+  padding: 20px;
+}
+
+.title-container {
+  grid-column: 1/-2;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+h1 {
+  font-size: 5em;
+}
+
+.qr-container {
+  grid-row: 1/4;
+  grid-column: 4/5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 0px;
+}
+
+img {
+  max-width: 65%;
+  max-height: 65%;
+}
+
+.text-container {
+  grid-row: 3/4;
+  grid-column: 1/4;
+}
+
+.date-container, .price-container, .admission-container {
+  border-top: 0px;
+  border-bottom: 0px;
+}
+
+.date-container, .admission-container {
+  border-right: 0px;
+}
+
+@media (max-width: 500px) {
+  .text-container {
+    display: none;
+  }
+
+  .ticket-container {
+    grid-template: 2fr 70% 1fr 1fr / 1fr 1fr;
+    width: 350px;
+    overflow: hidden;
+    padding: 0px;
+    height: 800px;
+  }
+
+  .title-container {
+    flex-direction: column-reverse;
+    background-color: black;
+    color: white;
+    grid-column: 1/3;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    grid-row: 1/2;
+  }
+
+  h2 {
+    font-size: 1.25em;
+  }
+
+  h3 {
+    font-size: 1em;
+    font-weight: normal;
+  }
+
+  .qr-container {
+    grid-row: 2/3;
+    grid-column: 1/3;
+    border-left: 2px solid black;
+  }
+
+  img {
+    max-width: 70%;
+    max-height: 65%;
+  }
+
+  .date-container, .price-container, .admission-container {
+    border-bottom: 2px solid black;
+  }
+
+  .date-container{
+    grid-row: 3/4;
+    grid-column: 1/2;
+  }
+
+  .price-container {
+    grid-row: 4/5;
+    grid-column: 1/3;
+  }
+
+  .admission-container {
+    grid-row: 3/4;
+    grid-column: 2/3;
+    border-right: 2px solid black;
+  }
+}
