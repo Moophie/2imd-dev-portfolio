@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    padding: 0.5em;
+    gap: 0.75em;
+    display: grid;
+  }
+  
+  div {
+    text-align: center;
+    padding: 10px 0px;
+  }
+  
+  .red {
+    background-color: red; 
+  }
+  
+  .blue {
+    background-color: #77FFF1; 
+  }
+  
+  .yellow {
+    background-color: yellow; 
+  }
