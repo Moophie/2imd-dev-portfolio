@@ -1,27 +1,57 @@
 * {
-    box-sizing: border-box;
-  }
-  
-  div {
-    border: solid 1px black;
-  }
-  
-  .ticket-container {
-    display: grid;
-    grid-template: 5fr 2fr 1fr / 1fr 1fr 1fr 30%;
-    background-image: url("");
-    background-size: contain;
-  }
-  
-  h1 {
-    font-size: 5em;
-  }
-  
-  img-container {
-    grid-column: 4/5;
-  }
-  
-  img {
-    max-width: 80%;
-  }
-  
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.15em;
+}
+
+h1, h2, h3 {
+  padding: 0px;
+  margin: 0px;
+}
+
+div div {
+  border: solid 1px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ticket-container {
+  display: grid;
+  grid-template: 8fr 3fr 2fr / 2fr 2fr 2fr 3fr;
+  background-image: url("../images/festival_image.jpg");
+  background-size: 1200px;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 1200px;
+  height: 350px;
+  padding: 20px;
+}
+
+.title-container {
+  grid-column: 1/-2;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+h1 {
+  font-size: 5em;
+}
+
+.qr-container {
+  grid-row: 1/4;
+  grid-column: 4/5;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  max-width: 65%;
+  max-height: 65%;
+}
+
+.text-container {
+  grid-row: 3/4;
+  grid-column: 1/4;
+}
