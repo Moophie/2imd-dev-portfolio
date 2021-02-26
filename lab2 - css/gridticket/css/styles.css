@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  div {
+    border: solid 1px black;
+  }
+  
+  .ticket-container {
+    display: grid;
+    grid-template: 5fr 2fr 1fr / 1fr 1fr 1fr 30%;
+    background-image: url("");
+    background-size: contain;
+  }
+  
+  h1 {
+    font-size: 5em;
+  }
+  
+  img-container {
+    grid-column: 4/5;
+  }
+  
+  img {
+    max-width: 80%;
+  }
+  
