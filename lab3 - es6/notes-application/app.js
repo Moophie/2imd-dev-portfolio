@@ -66,6 +66,7 @@ class App {
     // if (e.key === "Enter")
 
     if (e.key === "Enter"){
+      e.preventDefault();
       let note = new Note(this.txtTodo.value);
       note.add();
     }
