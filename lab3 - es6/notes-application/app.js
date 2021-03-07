@@ -27,6 +27,17 @@ class Note {
     // HINT🤩
     // localStorage only supports strings, not arrays
     // if you want to store arrays, look at JSON.parse and JSON.stringify
+    var allNotes = window.localStorage.getItem("allNotes");
+    console.log(allNotes);
+    allNotes = JSON.parse(allNotes);
+    console.log(allNotes);
+    if (allNotes) {
+      allNotes.push(this.title);
+    } else {
+      allNotes = this.title;
+    }
+    console.log(allNotes)
+    window.localStorage.setItem("allNotes", JSON.stringify(allNotes));
   }
 
   remove() {
@@ -44,6 +55,7 @@ class App {
     console.log("👊🏼 The Constructor!");
     this.txtTodo = document.getElementById("taskInput");
     this.txtTodo.addEventListener("keypress", this.createNote.bind(this));
+    this.loadNotesFromStorage();
 
     // HINT🤩
     // pressing the enter key in the text field triggers the createNote function
@@ -57,6 +69,15 @@ class App {
   loadNotesFromStorage() {
     // HINT🤩
     // load all notes from storage here and add them to the screen
+    let allNotes = window.localStorage.getItem("allNotes");
+    console.log(allNotes);
+    allNotes = JSON.parse(allNotes);
+    console.log(allNotes);
+    allNotes.forEach((n) => {
+      let title = n;
+      let note = new Note(title);
+      note.add();
+    });
   }
 
   createNote(e) {
@@ -67,10 +88,11 @@ class App {
     // clear the text field with .reset in this class
     // if (e.key === "Enter")
 
-    if (e.key === "Enter"){
+    if (e.key === "Enter") {
       e.preventDefault();
       let note = new Note(this.txtTodo.value);
       note.add();
+      note.saveToStorage();
     }
   }
 
