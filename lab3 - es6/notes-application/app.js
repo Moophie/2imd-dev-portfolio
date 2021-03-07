@@ -2,19 +2,25 @@ class Note {
   constructor(title) {
     this.title = title;
     // HINT🤩 this.element = this.createElement(title);
+
+    this.element = this.createElement(title);
   }
 
   createElement(title) {
     let newNote = document.createElement("li");
+    newNote.innerHTML = title;
 
     // HINT🤩 newNote.addEventListener('click', this.remove.bind(newNote));
 
+    newNote.addEventListener('click', this.remove.bind(newNote))
     return newNote;
   }
 
   add() {
     // HINT🤩
     // this function should append the note to the screen somehow
+    let taskList = document.getElementById("taskList");
+    taskList.appendChild(this.element);
   }
 
   saveToStorage() {
@@ -34,6 +40,8 @@ class Note {
 class App {
   constructor() {
     console.log("👊🏼 The Constructor!");
+    this.txtTodo = document.getElementById("taskInput");
+    this.txtTodo.addEventListener("keypress", this.createNote.bind(this));
 
     // HINT🤩
     // pressing the enter key in the text field triggers the createNote function
@@ -56,6 +64,11 @@ class App {
     // note.saveToStorage();
     // clear the text field with .reset in this class
     // if (e.key === "Enter")
+
+    if (e.key === "Enter"){
+      let note = new Note(this.txtTodo.value);
+      note.add();
+    }
   }
 
   reset() {
