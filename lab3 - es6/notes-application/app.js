@@ -99,7 +99,7 @@ class App {
 
   reset() {
     // this function should reset the form / clear the text field
-    this.txtTodo.innerText = "";
+    this.txtTodo.value = "";
   }
 }
 
