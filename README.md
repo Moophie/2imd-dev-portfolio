@@ -15,10 +15,23 @@ A git repository to store my "Webtech Advanced: frontend" labs.
 [Grid exercise: Festival Ticket](https://codepen.io/moophie/pen/WNoMgQe)
 
 ### FlexFroggy completion
+
+<details>
+
+<summary>Click to view image</summary>
+
 ![FlexFroggy completion](https://github.com/Moophie/2imd-dev-portfolio/blob/master/lab2%20-%20css/froggy_proof.PNG)
 
+</details>
+
 ### GridGarden completion
+<details>
+
+<summary>Click to view image</summary>
+
 ![GridGarden completion](https://github.com/Moophie/2imd-dev-portfolio/blob/master/lab2%20-%20css/garden_proof.PNG)
+
+</details>
 
 ## LAB 3
 
