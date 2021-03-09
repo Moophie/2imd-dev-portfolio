@@ -27,16 +27,13 @@ class Note {
     // HINT🤩
     // localStorage only supports strings, not arrays
     // if you want to store arrays, look at JSON.parse and JSON.stringify
-    var allNotes = window.localStorage.getItem("allNotes");
-    console.log(allNotes);
-    allNotes = JSON.parse(allNotes);
-    console.log(allNotes);
+    let allNotes = window.localStorage.getItem("allNotes");
     if (allNotes) {
-      allNotes.push(this.title);
+      allNotes = JSON.parse(allNotes);
     } else {
-      allNotes = this.title;
+      allNotes = [];
     }
-    console.log(allNotes)
+    allNotes.push(this.title);
     window.localStorage.setItem("allNotes", JSON.stringify(allNotes));
   }
 
@@ -70,9 +67,11 @@ class App {
     // HINT🤩
     // load all notes from storage here and add them to the screen
     let allNotes = window.localStorage.getItem("allNotes");
-    console.log(allNotes);
-    allNotes = JSON.parse(allNotes);
-    console.log(allNotes);
+    if (allNotes) {
+      allNotes = JSON.parse(allNotes);
+    } else {
+      allNotes = [];
+    }
     allNotes.forEach((n) => {
       let title = n;
       let note = new Note(title);
