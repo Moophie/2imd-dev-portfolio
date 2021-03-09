@@ -44,6 +44,11 @@ class Note {
     // remove the item from screen and from localstorage
     let taskList = document.getElementById("taskList");
     taskList.removeChild(this);
+
+    let allNotes = JSON.parse(window.localStorage.getItem("allNotes"));
+    let index = allNotes.indexOf(this.title);
+    allNotes.splice(index, 1);
+    window.localStorage.setItem("allNotes", JSON.stringify(allNotes));
   }
 }
 
