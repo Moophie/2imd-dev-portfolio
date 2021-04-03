@@ -15,7 +15,22 @@ class App {
     locationSuccess(result) {
         this.lat = result.coords.latitude;
         this.lng = result.coords.longitude;
-        this.getWeather();
+
+        let timeSinceLastCall;
+        let lastCall = localStorage.getItem("apiCallTime");
+
+        if (lastCall !== null) {
+            timeSinceLastCall = Date.now() - lastCall;
+        }
+
+        if (timeSinceLastCall > 3600000 || lastCall === null) {
+            this.getWeather();
+        }
+
+        let temp = localStorage.getItem("temp");
+        let weather = localStorage.getItem("weather");
+        this.updateActivity(temp);
+        this.updatePokemon(weather);
     }
 
     locationError(error) {
@@ -30,10 +45,10 @@ class App {
         }).then(data => {
             let temp = data.main.temp;
             let weather = data.weather[0].main
+            let now = Date.now();
             localStorage.setItem("temp", temp);
             localStorage.setItem("weather", weather);
-            this.updateActivity(temp);
-            this.updatePokemon(weather);
+            localStorage.setItem("apiCallTime", now);
         }).catch(err => {
             console.log(err);
         })
@@ -123,7 +138,6 @@ class App {
         fetch(typeUrl).then(response => {
             return response.json();
         }).then(data => {
-            console.log(data.pokemon);
             this.pickPokemonOfType(data.pokemon);
         }).catch(err => {
             console.log(err);
