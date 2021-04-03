@@ -131,6 +131,10 @@ class App {
                 type = 4;
                 text = `Dusty, perfect to catch ground pokemon.`;
                 break;
+
+            default:
+                type = 18;
+                text = "What strange weather";
         }
 
         pokeText.innerHTML = `Weather: ` + text;
@@ -157,7 +161,7 @@ class App {
 
     updatePokemonImage(pokemonUrl) {
         const pokeImg = document.querySelector(".poke-img");
-        
+
         fetch(pokemonUrl).then(response => {
             return response.json();
         }).then(data => {
