@@ -32,17 +32,26 @@ class App {
             let weather = data.weather[0].main
             localStorage.setItem("temp", temp);
             localStorage.setItem("weather", weather);
+            this.updateActivity(temp);
         }).catch(err => {
             console.log(err);
         })
     }
 
-    updateText(temp, weather) {
-        
+    updateActivity(temp) {
+        const activityText = document.querySelector(".activity-text");
+        if (temp < 10) {
+            activityText.innerHTML = "Brr, way too cold to go catch Pokemons outside. Better stay inside and grab your Nintendo!";
+        } else if (temp < 15) {
+            activityText.innerHTML = "Go catch some Pokemons outside with Pokemon Go! Don't forget your jacket, it's not that warm.";
+        } else {
+            activityText.innerHTML = "Its really hot outside, grab your mobile phone and go catch some Pokemons in the park!";
+        }
     }
 
-    updateImage() {
-
+    updatePokemon(weather) {
+        const pokeText = document.querySelector(".poke-text");
+        const pokeImg = document.querySelector(".poke-img");
     }
 }
 
