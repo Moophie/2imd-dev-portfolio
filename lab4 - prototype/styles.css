@@ -1,0 +1,6 @@
+.content {
+    width: 800px;
+    height: 450px;
+    background-image: url("images/whosthatpokemon.png");
+    background-size: cover;
+}

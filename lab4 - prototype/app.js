@@ -35,6 +35,13 @@ class App {
         }).catch(err => {
             console.log(err);
         })
+    }
+
+    updateText(temp, weather) {
+        
+    }
+
+    updateImage() {
 
     }
 }
