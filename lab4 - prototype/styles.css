@@ -6,7 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     color: #FFCB05;
-    background-color:  #2D70B7;
+    background-color: #2D70B7;
     align-items: center;
     width: 280px;
     height: 180px;
@@ -26,10 +26,10 @@ body {
     justify-content: space-between;
     align-items: center;
     color: #FFCB05;
-    background-color:  #2D70B7;
+    background-color: #2D70B7;
 }
 
-.poke-suggestion h2,h4 {
+.poke-suggestion h2, h4 {
     margin: 0px;
     width: 280px;
     margin: 10px 0px;

@@ -56,12 +56,13 @@ class App {
 
     updateActivity(temp) {
         const activityText = document.querySelector(".activity-text");
+
         if (temp < 10) {
-            activityText.innerHTML = "Too cold to catch them outside, luckily you have your Nintendo!";
+            activityText.innerHTML = `Too cold to catch them outside, luckily you have your Nintendo!`;
         } else if (temp < 15) {
-            activityText.innerHTML = "Inside or outside, the choice is yours!";
+            activityText.innerHTML = `Inside or outside, the choice is yours!`;
         } else {
-            activityText.innerHTML = "Its warm outside, go catch some Pokemon in the park!";
+            activityText.innerHTML = `Its warm outside, go catch some Pokemon in the park!`;
         }
     }
 
@@ -74,67 +75,67 @@ class App {
             case "Clear":
                 // Grass
                 type = 12;
-                text = "A clear sky, perfect to catch grass pokemon."
+                text = `A clear sky, perfect to catch grass pokemon.`;
                 break;
 
             case "Thunderstorm":
                 // Electric
                 type = 13;
-                text = "A thunderstorm, perfect to catch electric pokemon."
+                text = `A thunderstorm, perfect to catch electric pokemon.`;
                 break;
 
             case "Drizzle":
                 // Water
                 type = 11;
-                text = "Drizzling, perfect to catch water pokemon."
+                text = `Drizzling, perfect to catch water pokemon.`;
                 break;
 
             case "Rain":
                 // Water
                 type = 11;
-                text = "Raining, perfect to catch water pokemon."
+                text = `Raining, perfect to catch water pokemon.`;
                 break;
 
             case "Snow":
                 // Ice
                 type = 15;
-                text = "Snowing, perfect to catch ice pokemon."
+                text = `Snowing, perfect to catch ice pokemon.`;
                 break;
 
             case "Clouds":
                 // Normal
                 type = 1;
-                text = "Cloudy, perfect to catch normal pokemon."
+                text = `Cloudy, perfect to catch normal pokemon.`;
                 break;
 
             case "Ash":
                 // Fire
                 type = 10;
-                text = "Ashy, perfect to catch fire pokemon."
+                text = `Ashy, perfect to catch fire pokemon.`;
                 break;
 
             case "Tornado":
                 // Flying
                 type = 3;
-                text = "A tornado, perfect to catch flying pokemon."
+                text = `A tornado, perfect to catch flying pokemon.`;
                 break;
 
             case "Smoke":
                 // Poison
                 type = 4;
-                text = "Smoky, perfect to catch poison pokemon."
+                text = `Smoky, perfect to catch poison pokemon.`;
                 break;
 
             case "Dust":
                 // Ground
                 type = 4;
-                text = "Dusty, perfect to catch ground pokemon."
+                text = `Dusty, perfect to catch ground pokemon.`;
                 break;
         }
 
-        pokeText.innerHTML = "Weather: " + text;
+        pokeText.innerHTML = `Weather: ` + text;
 
-        let typeUrl = "https://pokeapi.co/api/v2/type/" + type;
+        let typeUrl = `https://pokeapi.co/api/v2/type/` + type;
         fetch(typeUrl).then(response => {
             return response.json();
         }).then(data => {
@@ -147,13 +148,16 @@ class App {
     pickPokemonOfType(allPokemonOfType) {
         const pokeName = document.querySelector(".poke-name");
         const random = Math.floor(Math.random() * allPokemonOfType.length);
+
         let randomPokemon = allPokemonOfType[random].pokemon;
         pokeName.innerHTML = randomPokemon.name.charAt(0).toUpperCase() + randomPokemon.name.slice(1);
+
         this.updatePokemonImage(randomPokemon.url);
     }
 
     updatePokemonImage(pokemonUrl) {
         const pokeImg = document.querySelector(".poke-img");
+        
         fetch(pokemonUrl).then(response => {
             return response.json();
         }).then(data => {
