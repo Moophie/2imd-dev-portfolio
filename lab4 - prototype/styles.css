@@ -1,6 +1,59 @@
-.content {
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    color: #FFCB05;
+    background-color:  #2D70B7;
+    width: 790px;
+    padding-left: 10px;
+}
+
+.activity-text {
+    width: 800px;
+    text-align: center;
+}
+
+.poke-suggestion {
+    width: 800px;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    color: #FFCB05;
+    background-color:  #2D70B7;
+}
+
+.poke-suggestion h3 {
+    width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.random-poke {
     width: 800px;
     height: 450px;
     background-image: url("images/whosthatpokemon.png");
     background-size: cover;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.poke-img {
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.poke-name {
+    max-width: 350px;
+    color: #FFCB05;
+    font-size: 80px;
+    font-weight: bolder;
+    margin-top: -150px;
+    -webkit-text-stroke: 3px #2D70B7;
+    text-overflow: ellipsis;
 }
