@@ -36,3 +36,7 @@ A git repository to store my "Webtech Advanced: frontend" labs.
 ## LAB 3
 
 [ES6 exercise: Notes application](https://codesandbox.io/s/lab3-todo-app-forked-qbij3)
+
+## LAB 4
+
+[Weather-based advertisement: Pokemon application](https://codesandbox.io/s/lab4-pokemon-weather-ad-wczyp)
