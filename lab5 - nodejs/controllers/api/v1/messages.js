@@ -34,18 +34,17 @@ const getOneMessage = (req, res) => {
 const postMessage = (req, res) => {
     if (req.query.user) {
         let username = req.query.user;
-
         res.json({
             status: "succes",
             data: {
-                message: `Getting all messages from ${username}`
+                message: `Posting new message for ${username}`
             }
         })
     } else {
         res.json({
             status: "succes",
             data: {
-                message: `Getting all messages`
+                message: `Posting new message for unknown user`
             }
         })
     }
@@ -54,7 +53,7 @@ const postMessage = (req, res) => {
 
 const putMessage = (req, res) => {
     let id = req.params.id;
-
+    
     res.json({
         status: "succes",
         data: {
