@@ -37,14 +37,14 @@ const postMessage = (req, res) => {
         res.json({
             status: "succes",
             data: {
-                message: `Posting new message for ${username}`
+                message: `Posting new message for user ${username}`
             }
         })
     } else {
         res.json({
             status: "succes",
             data: {
-                message: `Posting new message for unknown user`
+                message: `Posting new message for user Pikachu`
             }
         })
     }
