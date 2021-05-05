@@ -1,4 +1,6 @@
 const getAllMessages = (req, res) => {
+let
+
     res.json({
         status: "succes",
         data : {
@@ -8,10 +10,12 @@ const getAllMessages = (req, res) => {
 }
 
 const getOneMessage = (req, res) => {
+let id = req.params.id;
+
     res.json({
         status: "succes",
         data : {
-            message: `Getting message with id`
+            message: `Getting message with id ${id}`
         }
     })
 }
@@ -21,26 +25,28 @@ const postMessage = (req, res) => {
     res.json({
         status: "succes",
         data : {
-            message: `Posting new message`
+            message: `Posting new message for user Pikachu`
         }
     })
 }
 
 
 const putMessage = (req, res) => {
+    let id = req.params.id;
     res.json({
         status: "succes",
         data : {
-            message: `Updating message with id`
+            message: `Updating message with id ${id}`
         }
     })
 }
 
 const deleteMessage = (req, res) => {
+    let id = req.params.id;
     res.json({
         status: "succes",
         data : {
-            message: `Deleting message with id`
+            message: `Deleting message with id ${id}`
         }
     })
 }
