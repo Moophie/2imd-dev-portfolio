@@ -6,9 +6,10 @@ const fetch = require("node-fetch");
 router.get('/', function (req, res, next) {
   fetch('/api/v1/messages/')
     .then(response => response.json())
-    .then(data => $messages = data);
-
-  res.render('index', { title: 'MessageAPI', messages: $messages });
+    .then(data => {
+      $messages = data;
+      res.render('index', { title: 'MessageAPI', messages: $messages })
+    });
 });
 
 module.exports = router;
