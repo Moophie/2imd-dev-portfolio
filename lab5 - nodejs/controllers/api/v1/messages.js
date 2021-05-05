@@ -44,3 +44,9 @@ const deleteMessage = (req, res) => {
         }
     })
 }
+
+module.exports.getAllMessages = getAllMessages;
+module.exports.getOneMessage = getOneMessage;
+module.exports.postMessage = postMessage;
+module.exports.putMessage = putMessage;
+module.exports.deleteMessage = deleteMessage;
