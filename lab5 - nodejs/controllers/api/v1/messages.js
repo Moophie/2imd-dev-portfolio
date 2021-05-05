@@ -1,20 +1,30 @@
 const getAllMessages = (req, res) => {
-let
+    if (req.query.user) {
+        let username = req.query.user;
 
-    res.json({
-        status: "succes",
-        data : {
-            message: `Getting all messages`
-        }
-    })
+        res.json({
+            status: "succes",
+            data: {
+                message: `Getting all messages from ${username}`
+            }
+        })
+    } else {
+        res.json({
+            status: "succes",
+            data: {
+                message: `Getting all messages`
+            }
+        })
+    }
+
 }
 
 const getOneMessage = (req, res) => {
-let id = req.params.id;
+    let id = req.params.id;
 
     res.json({
         status: "succes",
-        data : {
+        data: {
             message: `Getting message with id ${id}`
         }
     })
@@ -22,20 +32,32 @@ let id = req.params.id;
 
 
 const postMessage = (req, res) => {
-    res.json({
-        status: "succes",
-        data : {
-            message: `Posting new message for user Pikachu`
-        }
-    })
+    if (req.query.user) {
+        let username = req.query.user;
+
+        res.json({
+            status: "succes",
+            data: {
+                message: `Getting all messages from ${username}`
+            }
+        })
+    } else {
+        res.json({
+            status: "succes",
+            data: {
+                message: `Getting all messages`
+            }
+        })
+    }
 }
 
 
 const putMessage = (req, res) => {
     let id = req.params.id;
+
     res.json({
         status: "succes",
-        data : {
+        data: {
             message: `Updating message with id ${id}`
         }
     })
@@ -45,7 +67,7 @@ const deleteMessage = (req, res) => {
     let id = req.params.id;
     res.json({
         status: "succes",
-        data : {
+        data: {
             message: `Deleting message with id ${id}`
         }
     })
