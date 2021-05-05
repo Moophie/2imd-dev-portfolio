@@ -5,9 +5,11 @@ const url = require('url');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  var baseUrl = req.protocol + '://' + req.get('host');  
 
-  fetch(baseUrl + 'api/v1/messages')
+  const dev = process.env.NODE_ENV !== 'production';
+  const server = dev ? 'http://localhost:3000/' : 'https://nodejs-exercise-api.herokuapp.com/';
+
+  fetch(`${server}api/v1/messages`)
     .then(response => response.json())
     .then(data => {
       $messages = data;
